@@ -1,9 +1,12 @@
 const express = require('express')
 const routes = require('./routes');
-require('dotenv').config()
 const bodyParser = require('body-parser');
+const { DEV_SERVER_PORT } = require('./constants');
+require('dotenv').config()
+
 const app = express()
-const port = process.env.PORT || 5000
+
+const port = process.env.PORT || DEV_SERVER_PORT
 
 app.use(bodyParser.urlencoded({extended: true}));
 
