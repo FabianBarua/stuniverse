@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App () {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,8 +26,12 @@ function App () {
     <>
       <main>
         <h1>Ping</h1>
-        <h1 className='pong'>{message}</h1>
-        <p>Server response ⬆️</p>
+        {null && (
+          <>
+            <h1 className='pong'>{message}</h1>
+            <p>Server response ⬆️</p>{' '}
+          </>
+        )}
       </main>
     </>
   )
