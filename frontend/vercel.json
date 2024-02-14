@@ -1,13 +1,8 @@
 {
-    "routes": [
+    "rewrites": [
         {
-            "src": "/api/(.*)",
-            "dest": "https://stuniverse-back.vercel.app/$1"
-        },
-        {
-            "src": "/.*",
-            "status": 200,
-            "dest": "/"
+            "source": "/api/:path*",
+            "destination": "https://stuniverse-back.vercel.app/:path*"
         }
     ]
 }
