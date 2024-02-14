@@ -26,7 +26,7 @@ function App () {
     <>
       <main>
         <h1>Ping</h1>
-        {null && (
+        {message && (
           <>
             <h1 className='pong'>{message}</h1>
             <p>Server response ⬆️</p>{' '}
