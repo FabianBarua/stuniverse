@@ -5,12 +5,30 @@ function App () {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    setMessage('hola')
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/ping')
+        if (response.ok) {
+          const data = await response.json()
+          setMessage(data.message)
+        } else {
+          console.error('Error fetching data:', response.status)
+        }
+      } catch (error) {
+        console.error('Error:', error)
+      }
+    }
+
+    fetchData()
   }, [])
 
   return (
     <>
-      <h1>{message}</h1>
+      <main>
+        <h1>Ping</h1>
+        <h1 className='pong'>{message}</h1>
+        <p>Server response ⬆️</p>
+      </main>
     </>
   )
 }

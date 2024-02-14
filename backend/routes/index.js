@@ -4,14 +4,9 @@ const router = express.Router();
 
 module.exports = function(){
 
-router.get('/' , (req , res)=>{
-    res.send("hello world")
-})
-
-router.get('/ping' , (req , res)=>{
-    res.send('pong')
-})
-
+router.get('/ping', (req, res) => {
+    res.json({ message: 'Pong 🏓' });
+  });
 
 return router
 }

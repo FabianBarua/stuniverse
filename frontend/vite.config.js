@@ -9,11 +9,12 @@ console.log('use backend: ' + apiTarget)
 
 export default defineConfig({
   plugins: [react()],
+  server: {
   proxy: {
     '/api': {
       target: apiTarget,
       changeOrigin: true,
       rewrite: (path) => path.replace(/^\/api/, ''),
     },
-  },
+  },}
 })
