@@ -10,7 +10,7 @@ const port = process.env.PORT || DEV_SERVER_PORT
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/api/', routes());
+app.use('/', routes());
 
 app.listen(port , ()=> console.log('> Server is up and running on port : ' + port))
 
